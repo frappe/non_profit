@@ -7,8 +7,8 @@ import frappe
 from frappe.utils import add_months, nowdate
 
 import erpnext
-from erpnext.non_profit.doctype.member.member import create_member
-from erpnext.non_profit.doctype.membership.membership import update_halted_razorpay_subscription
+from non_profit.non_profit.doctype.member.member import create_member
+from non_profit.non_profit.doctype.membership.membership import update_halted_razorpay_subscription
 
 
 class TestMembership(unittest.TestCase):

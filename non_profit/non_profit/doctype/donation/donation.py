@@ -10,7 +10,7 @@ from frappe.email import sendmail_to_system_managers
 from frappe.model.document import Document
 from frappe.utils import flt, get_link_to_form, getdate
 
-from erpnext.non_profit.doctype.membership.membership import verify_signature
+from non_profit.non_profit.doctype.membership.membership import verify_signature
 
 
 class Donation(Document):
@@ -168,7 +168,7 @@ def create_donor(payment):
 def get_company_for_donations():
 	company = frappe.db.get_single_value('Non Profit Settings', 'donation_company')
 	if not company:
-		from erpnext.non_profit.utils import get_company
+		from non_profit.non_profit.utils import get_company
 		company = get_company()
 	return company
 

@@ -5,7 +5,7 @@ import unittest
 
 import frappe
 
-from erpnext.non_profit.doctype.donation.donation import create_donation
+from non_profit.non_profit.doctype.donation.donation import create_donation
 
 
 class TestDonation(unittest.TestCase):

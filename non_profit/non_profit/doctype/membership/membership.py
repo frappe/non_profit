@@ -12,7 +12,7 @@ from frappe.model.document import Document
 from frappe.utils import add_days, add_months, add_years, get_link_to_form, getdate, nowdate
 
 import erpnext
-from erpnext.non_profit.doctype.member.member import create_member
+from non_profit.non_profit.doctype.member.member import create_member
 
 
 class Membership(Document):
@@ -352,7 +352,7 @@ def process_request_data(data):
 def get_company_for_memberships():
 	company = frappe.db.get_single_value("Non Profit Settings", "company")
 	if not company:
-		from erpnext.non_profit.utils import get_company
+		from non_profit.non_profit.utils import get_company
 		company = get_company()
 	return company
 
