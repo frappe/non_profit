@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include non_profit *.css
+recursive-include non_profit *.csv
+recursive-include non_profit *.html
+recursive-include non_profit *.ico
+recursive-include non_profit *.js
+recursive-include non_profit *.json
+recursive-include non_profit *.md
+recursive-include non_profit *.png
+recursive-include non_profit *.py
+recursive-include non_profit *.svg
+recursive-include non_profit *.txt
+recursive-exclude non_profit *.pyc
