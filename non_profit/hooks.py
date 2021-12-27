@@ -9,6 +9,10 @@ app_color = "grey"
 app_email = "pandikunta@frappe.io"
 app_license = "MIT"
 
+
+required_apps = ["erpnext"]
+
+
 # Includes in <head>
 # ------------------
 
@@ -188,3 +192,24 @@ app_license = "MIT"
 # 	"non_profit.auth.validate"
 # ]
 
+
+global_search_doctypes = {
+	"Non Profit": [
+		{'doctype': 'Certified Consultant', 'index': 1},
+		{'doctype': 'Certification Application', 'index': 2},
+		{'doctype': 'Volunteer', 'index': 3},
+		{'doctype': 'Membership', 'index': 4},
+		{'doctype': 'Member', 'index': 5},
+		{'doctype': 'Donor', 'index': 6},
+		{'doctype': 'Chapter', 'index': 7},
+		{'doctype': 'Grant Application', 'index': 8},
+		{'doctype': 'Volunteer Type', 'index': 9},
+		{'doctype': 'Donor Type', 'index': 10},
+		{'doctype': 'Membership Type', 'index': 11}
+	]
+}
+
+
+domains = {
+	'Non Profit': 'non_profit.non_profit.non_profit',
+}
