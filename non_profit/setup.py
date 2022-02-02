@@ -1,11 +1,18 @@
-# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
-# License: GNU General Public License v3. See license.txt
-
+from frappe.desk.page.setup_wizard.setup_wizard import make_records
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
 
-def setup(company=None, patch=True):
+def after_install():
 	make_custom_fields()
+	make_custom_records()
+	
+
+def make_custom_records():
+	records = [
+		{'doctype': "Party Type", "party_type": "Member", "account_type": "Receivable"},
+		{'doctype': "Party Type", "party_type": "Donor", "account_type": "Receivable"},
+	]
+	make_records(records)
 
 
 def make_custom_fields(update=True):
@@ -28,4 +35,6 @@ def get_custom_fields():
 		]
 	}
 	return custom_fields
+
+
 

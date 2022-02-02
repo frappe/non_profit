@@ -36,6 +36,9 @@ required_apps = ["erpnext"]
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Sales Invoice" : "public/js/payment_entry.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -70,7 +73,7 @@ required_apps = ["erpnext"]
 # ------------
 
 # before_install = "non_profit.install.before_install"
-# after_install = "non_profit.install.after_install"
+after_install = "non_profit.setup.after_install"
 
 # Uninstallation
 # ------------
@@ -100,9 +103,9 @@ required_apps = ["erpnext"]
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Payment Entry": "non_profit.non_profit.custom_doctype.payment_entry.NonProfitPaymentEntry",
+}
 
 # Document Events
 # ---------------
