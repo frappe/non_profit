@@ -2,8 +2,8 @@ import frappe
 
 from frappe import _, scrub
 from frappe.utils.data import comma_or
-from erpnext.erpnext.accounts.doctype.payment_entry.payment_entry import PaymentEntry
-from erpnext.erpnext.accounts.doctype.invoice_discounting.invoice_discounting import \
+from erpnext.accounts.doctype.payment_entry.payment_entry import PaymentEntry
+from erpnext.accounts.doctype.invoice_discounting.invoice_discounting import \
 	get_party_account_based_on_invoice_discounting
 
 
