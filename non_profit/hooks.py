@@ -73,7 +73,7 @@ doctype_js = {
 # ------------
 
 # before_install = "non_profit.install.before_install"
-after_install = "non_profit.setup.after_install"
+after_install = "non_profit.setup.setup_non_profit"
 
 # Uninstallation
 # ------------
@@ -210,9 +210,4 @@ global_search_doctypes = {
 		{'doctype': 'Donor Type', 'index': 10},
 		{'doctype': 'Membership Type', 'index': 11}
 	]
-}
-
-
-domains = {
-	'Non Profit': 'non_profit.non_profit.non_profit',
 }

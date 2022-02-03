@@ -1,10 +1,6 @@
+import frappe
 from frappe.desk.page.setup_wizard.setup_wizard import make_records
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
-
-
-def after_install():
-	make_custom_fields()
-	make_custom_records()
 
 
 def make_custom_records():
@@ -13,6 +9,32 @@ def make_custom_records():
 		{'doctype': "Party Type", "party_type": "Donor", "account_type": "Receivable"},
 	]
 	make_records(records)
+
+
+def setup_non_profit():
+	make_custom_records()
+	make_custom_fields()
+
+	has_domain = frappe.get_doc({
+		'doctype': 'Has Domain',
+		'parent': 'Domain Settings',
+		'parentfield': 'active_domains',
+		'parenttype': 'Domain Settings',
+		'domain': 'Non Profit',
+	})
+	has_domain.save()
+
+	domain = frappe.get_doc('Domain', 'Non Profit')
+	domain.setup_domain()
+
+	domain_settings = frappe.get_single('Domain Settings')
+	domain_settings.append('active_domains', dict(domain=domain))
+	frappe.clear_cache()
+
+
+data = {
+	'on_setup': 'non_profit.setup.setup_non_profit'
+}
 
 
 def make_custom_fields(update=True):
@@ -29,7 +51,8 @@ def get_custom_fields():
 				 fieldtype='Data', insert_after='non_profit_section'),
 			dict(fieldname='with_effect_from', label='80G With Effect From',
 				 fieldtype='Date', insert_after='company_80g_number'),
-			dict(fieldname='non_profit_column_break', fieldtype='Column Break', insert_after='with_effect_from'),
+			dict(fieldname='non_profit_column_break', fieldtype='Column Break',
+				 insert_after='with_effect_from'),
 			dict(fieldname='pan_details', label='PAN Number',
 				 fieldtype='Data', insert_after='with_effect_from')
 		],
