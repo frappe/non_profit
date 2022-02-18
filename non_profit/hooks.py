@@ -1,4 +1,5 @@
-from . import __version__ as app_version
+from frappe import _
+
 
 app_name = "non_profit"
 app_title = "Non Profit"
@@ -9,9 +10,7 @@ app_color = "grey"
 app_email = "pandikunta@frappe.io"
 app_license = "MIT"
 
-
 required_apps = ["erpnext"]
-
 
 # Includes in <head>
 # ------------------
@@ -37,7 +36,7 @@ required_apps = ["erpnext"]
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {
-	"Sales Invoice" : "public/js/payment_entry.js"
+	"Sales Invoice": "public/js/payment_entry.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -211,3 +210,8 @@ global_search_doctypes = {
 		{'doctype': 'Membership Type', 'index': 11}
 	]
 }
+
+standard_portal_menu_items = [
+	{"title": _("Certification"), "route": "/certification",
+	 "reference_doctype": "Certification Application", "role": "Non Profit Portal User"},
+]
