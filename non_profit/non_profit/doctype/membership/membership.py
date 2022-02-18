@@ -11,7 +11,6 @@ from frappe.email import sendmail_to_system_managers
 from frappe.model.document import Document
 from frappe.utils import add_days, add_months, add_years, get_link_to_form, getdate, nowdate
 
-import erpnext
 from non_profit.non_profit.doctype.member.member import create_member
 
 
@@ -45,7 +44,7 @@ class Membership(Document):
 
 	def validate_membership_period(self):
 		# get last membership (if active)
-		last_membership = erpnext.get_last_membership(self.member)
+		last_membership = get_last_membership(self.member)
 
 		# if person applied for offline membership
 		if last_membership and last_membership.name != self.name and not frappe.session.user == "Administrator":
@@ -413,3 +412,13 @@ def set_expired_status():
 		WHERE
 			`status` not in ('Cancelled') AND `to_date` < %s
 		""", (nowdate()))
+
+
+def get_last_membership(member):
+	print(member)
+	'''Returns last membership if exists'''
+	last_membership = frappe.get_all('Membership', 'name,to_date,membership_type',
+		dict(member=member, paid=1), order_by='to_date desc', limit=1)
+
+	if last_membership:
+		return last_membership[0]
