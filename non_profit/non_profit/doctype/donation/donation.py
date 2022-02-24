@@ -52,10 +52,10 @@ class Donation(Document):
 			frappe.throw(_('You need to set <b>Payment Account</b> for Donation in {0}').format(
 				get_link_to_form('Non Profit Settings', 'Non Profit Settings')))
 
-		from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
+		from non_profit.non_profit.custom_doctype.payment_entry import get_donation_payment_entry
 
 		frappe.flags.ignore_account_permission = True
-		pe = get_payment_entry(dt=self.doctype, dn=self.name)
+		pe = get_donation_payment_entry(dt=self.doctype, dn=self.name)
 		frappe.flags.ignore_account_permission = False
 		pe.paid_from = settings.donation_debit_account
 		pe.paid_to = settings.donation_payment_account
