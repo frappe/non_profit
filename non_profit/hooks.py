@@ -123,7 +123,7 @@ override_doctype_class = {
 
 scheduler_events = {
 	"daily": [
-		"erpnext.non_profit.doctype.membership.membership.set_expired_status",
+		"non_profit.non_profit.doctype.membership.membership.set_expired_status",
 	],
 }
 
