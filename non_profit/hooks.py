@@ -121,23 +121,11 @@ override_doctype_class = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"non_profit.tasks.all"
-# 	],
-# 	"daily": [
-# 		"non_profit.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"non_profit.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"non_profit.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"non_profit.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"non_profit.non_profit.doctype.membership.membership.set_expired_status",
+	],
+}
 
 # Testing
 # -------

@@ -12,7 +12,7 @@ frappe.ui.form.on('Donation', {
 
 	make_payment_entry: function(frm) {
 		return frappe.call({
-			method: 'erpnext.accounts.doctype.payment_entry.payment_entry.get_payment_entry',
+			method: 'non_profit.non_profit.custom_doctype.payment_entry.get_donation_payment_entry',
 			args: {
 				'dt': frm.doc.doctype,
 				'dn': frm.doc.name

@@ -74,7 +74,7 @@ frappe.ui.form.on("Non Profit Settings", {
 		if (frm.doc.membership_webhook_secret) {
 
 			frm.add_custom_button(__("Copy Webhook URL"), () => {
-				frappe.utils.copy_to_clipboard(`https://${frappe.boot.sitename}/api/method/erpnext.non_profit.doctype.membership.membership.trigger_razorpay_subscription`);
+				frappe.utils.copy_to_clipboard(`https://${frappe.boot.sitename}/api/method/non_profit.non_profit.doctype.membership.membership.trigger_razorpay_subscription`);
 			}, __("Memberships"));
 
 			frm.add_custom_button(__("Revoke Key"), () => {
@@ -107,7 +107,7 @@ frappe.ui.form.on("Non Profit Settings", {
 			label = __("Regenerate Webhook Secret");
 
 			frm.add_custom_button(__("Copy Webhook URL"), () => {
-				frappe.utils.copy_to_clipboard(`https://${frappe.boot.sitename}/api/method/erpnext.non_profit.doctype.donation.donation.capture_razorpay_donations`);
+				frappe.utils.copy_to_clipboard(`https://${frappe.boot.sitename}/api/method/non_profit.non_profit.doctype.donation.donation.capture_razorpay_donations`);
 			}, __("Donations"));
 
 			frm.add_custom_button(__("Revoke Key"), () => {
