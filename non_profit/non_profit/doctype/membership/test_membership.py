@@ -1,20 +1,19 @@
 # Copyright (c) 2017, Frappe Technologies Pvt. Ltd. and Contributors
 # See license.txt
 
-import unittest
-
 import frappe
 from frappe.utils import add_months, nowdate
+from frappe.tests.utils import FrappeTestCase
 
 import erpnext
 from non_profit.non_profit.doctype.member.member import create_member
 from non_profit.non_profit.doctype.membership.membership import update_halted_razorpay_subscription
 
 
-class TestMembership(unittest.TestCase):
+class TestMembership(FrappeTestCase):
 	def setUp(self):
+		frappe.db.delete('Customer')
 		plan = setup_membership()
-
 		# make test member
 		self.member_doc = create_member(
 			frappe._dict({
@@ -23,7 +22,7 @@ class TestMembership(unittest.TestCase):
 				"plan_id": plan.name,
 				"subscription_id": "sub_DEX6xcJ1HSW4CR",
 				"customer_id": "cust_C0WlbKhp3aLA7W",
-				"subscription_status": "Active"
+				"subscription_status": "Active",
 			})
 		)
 		self.member_doc.make_customer_and_link()

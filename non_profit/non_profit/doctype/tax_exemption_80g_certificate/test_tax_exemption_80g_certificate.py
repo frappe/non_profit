@@ -1,10 +1,9 @@
 # Copyright (c) 2021, Frappe Technologies Pvt. Ltd. and Contributors
 # See license.txt
 
-import unittest
-
 import frappe
 from frappe.utils import getdate
+from frappe.tests.utils import FrappeTestCase
 
 from erpnext.accounts.utils import get_fiscal_year
 from non_profit.non_profit.doctype.donation.donation import create_razorpay_donation
@@ -17,7 +16,7 @@ from non_profit.non_profit.doctype.member.member import create_member
 from non_profit.non_profit.doctype.membership.test_membership import make_membership, setup_membership
 
 
-class TestTaxExemption80GCertificate(unittest.TestCase):
+class TestTaxExemption80GCertificate(FrappeTestCase):
 	def setUp(self):
 		frappe.db.sql('delete from `tabTax Exemption 80G Certificate`')
 		frappe.db.sql('delete from `tabMembership`')
