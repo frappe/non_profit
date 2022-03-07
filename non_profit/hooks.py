@@ -130,7 +130,7 @@ scheduler_events = {
 # Testing
 # -------
 
-# before_tests = "non_profit.install.before_tests"
+before_tests = "non_profit.non_profit.utils.before_tests"
 
 # Overriding Methods
 # ------------------------------
