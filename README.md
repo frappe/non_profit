@@ -10,7 +10,7 @@ People who change the world need the tools to do it! The Non Profit Modules of E
 
 Using bench, [install ERPNext](https://github.com/frappe/bench#installation) as mentioned here.
 
-Once ERPNext is installed, add healthcare app to your bench by running
+Once ERPNext is installed, add non_profit app to your bench by running
 
 ```sh
 $ bench get-app non_profit
