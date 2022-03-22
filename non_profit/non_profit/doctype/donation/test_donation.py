@@ -36,7 +36,7 @@ class TestDonation(unittest.TestCase):
 		# Naive test to check if at all payment entry is generated
 		# This method is actually triggered from Payment Gateway
 		# In any case if details were missing, this would throw an error
-		donation.on_payment_authorized()
+		donation.on_payment_authorized(status='Completed')
 		donation.reload()
 
 		self.assertEqual(donation.paid, 1)
