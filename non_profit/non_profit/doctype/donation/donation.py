@@ -40,6 +40,7 @@ class Donation(Document):
 			self.donor = donor_name
 
 	def on_payment_authorized(self, *args, **kwargs):
+		self.db_set("paid", 1)
 		self.load_from_db()
 		self.create_payment_entry()
 
