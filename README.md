@@ -1,5 +1,7 @@
 ## Non Profit
 
+[![CI](https://github.com/frappe/non_profit/actions/workflows/ci.yml/badge.svg)](https://github.com/frappe/non_profit/actions/workflows/ci.yml)
+
 A Non profit app built on top of Frappe framework & ERPNext.
 
 
@@ -25,7 +27,7 @@ $ bench --site demo.com install-app non_profit
 
 ### Documentation
 
-Read documentation at https://docs.erpnext.com/docs/v13/user/manual/en/non_profit
+Read documentation at https://docs.erpnext.com/docs/v13/user/manual/en/non_profit/introduction
 
 
 ### License
