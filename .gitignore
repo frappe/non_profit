@@ -4,3 +4,4 @@
 *.swp
 tags
 non_profit/docs/current
+__pycache__
