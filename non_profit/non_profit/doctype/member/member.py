@@ -5,9 +5,10 @@
 import frappe
 from frappe import _
 from frappe.contacts.address_and_contact import load_address_and_contact
-from frappe.integrations.utils import get_payment_gateway_controller
 from frappe.model.document import Document
 from frappe.utils import cint, get_link_to_form
+
+from payments.utils import get_payment_gateway_controller
 
 from non_profit.non_profit.doctype.membership_type.membership_type import get_membership_type
 
