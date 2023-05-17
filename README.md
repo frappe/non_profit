@@ -25,7 +25,7 @@ $ bench --site demo.com install-app non_profit
 
 ### Documentation
 
-Read documentation at https://docs.erpnext.com/docs/v13/user/manual/en/non_profit
+Read documentation at https://docs.erpnext.com/docs/v14/user/manual/en/non_profit/introduction
 
 
 ### License
