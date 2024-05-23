@@ -10,6 +10,9 @@ People who change the world need the tools to do it! The Non Profit Modules of E
 
 Using bench, [install ERPNext](https://github.com/frappe/bench#installation) as mentioned here.
 
+> [!CAUTION]
+> [Payments app](https://github.com/frappe/payments) is required. If not installed first installation will fail.
+
 Once ERPNext is installed, add non_profit app to your bench by running
 
 ```sh
