@@ -77,7 +77,7 @@ class NonProfitPaymentEntry(PaymentEntry):
 					continue
 
 				ref_details = get_payment_reference_details(d.reference_doctype,
-					d.reference_name, self.party_account_currency)
+					d.reference_name, self.party_account_currency, self.party_type, self.party)
 
 				# Only update exchange rate when the reference is Journal Entry
 				if (
@@ -190,7 +190,7 @@ def set_paid_amount_and_received_amount(party_account_currency, bank, outstandin
 
 
 @frappe.whitelist()
-def get_payment_reference_details(reference_doctype, reference_name, party_account_currency):
+def get_payment_reference_details(reference_doctype, reference_name, party_account_currency, party_type, party):
 	total_amount = outstanding_amount = exchange_rate = bill_no = None
 	ref_doc = frappe.get_doc(reference_doctype, reference_name)
 	company_currency = ref_doc.get("company_currency") or erpnext.get_company_currency(ref_doc.company)
@@ -208,12 +208,11 @@ def get_payment_reference_details(reference_doctype, reference_name, party_accou
 		exchange_rate = 1
 		outstanding_amount = ref_doc.get("dunning_amount")
 	elif reference_doctype == "Journal Entry" and ref_doc.docstatus == 1:
-		total_amount = ref_doc.get("total_amount")
 		if ref_doc.multi_currency:
 			exchange_rate = get_exchange_rate(party_account_currency, company_currency, ref_doc.posting_date)
 		else:
 			exchange_rate = 1
-			outstanding_amount = get_outstanding_on_journal_entry(reference_name)
+			outstanding_amount, total_amount = get_outstanding_on_journal_entry(reference_name, party_type, party)
 	elif reference_doctype != "Journal Entry":
 		if ref_doc.doctype == "Expense Claim":
 				total_amount = flt(ref_doc.total_sanctioned_amount) + flt(ref_doc.total_taxes_and_charges)
