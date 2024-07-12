@@ -14,6 +14,7 @@ from frappe.utils import add_days, add_months, add_years, get_link_to_form, getd
 from non_profit.non_profit.doctype.member.member import create_member
 
 
+
 class Membership(Document):
 	def validate(self):
 		if not self.member or not frappe.db.exists("Member", self.member):
