@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "non_profit"
+version = "0.1.0"
+description = "Minimum viable Python project scaffold for the non_profit application."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "RUPHAsoft" }]
+
+# Keep dependencies empty for now since requirements.txt is empty and
+# the repo appears to have no declared runtime deps.
+dependencies = []
+
+[tool.setuptools]
+# No packaging layout assumptions; keep minimal.

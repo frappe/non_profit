@@ -1,19 +1,55 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "field:member_name",
  "creation": "2017-09-11 09:24:52.898356",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "select_facility",
+  "enter_facility_name",
   "member_name",
   "membership_expiry_date",
+  "member_pin",
+  "qr_code_data",
+  "qr_code",
+  "member_approval_status",
+  "membership_status",
+  "url",
   "column_break_5",
   "membership_type",
+  "initial_membership",
   "email_id",
+  "theatre",
+  "nhif_contract",
+  "nhif_contract_type",
+  "nhif_scope",
+  "makl_contract",
+  "makl_scope",
+  "column_break_siil",
+  "kmpdc_registration",
+  "kmpdc_current_license",
+  "directors_id",
+  "kra_pin",
+  "keph_level",
+  "bed_capacity",
+  "nhif_hospital_code",
+  "mfl_code",
+  "services_offered",
+  "pan_details",
   "image",
+  "exhibition_stand_optin",
+  "costs",
+  "number_of_complementary_passes",
+  "director_sb",
+  "rep_name",
+  "designation",
+  "phone",
+  "county",
+  "representative_email_id",
+  "column_break_btsk",
   "customer_section",
   "customer",
   "customer_name",
@@ -43,8 +79,9 @@
    "fieldname": "member_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Member Name",
-   "reqd": 1
+   "label": "Facility Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "membership_expiry_date",
@@ -112,7 +149,8 @@
   {
    "fieldname": "address_html",
    "fieldtype": "HTML",
-   "label": "Address HTML"
+   "label": "Address HTML",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_9",
@@ -121,13 +159,8 @@
   {
    "fieldname": "contact_html",
    "fieldtype": "HTML",
-   "label": "Contact HTML"
-  },
-  {
-   "fieldname": "email_id",
-   "fieldtype": "Data",
-   "label": "Email Address",
-   "options": "Email"
+   "label": "Contact HTML",
+   "read_only": 1
   },
   {
    "fieldname": "subscription_id",
@@ -166,14 +199,237 @@
    "fieldtype": "Select",
    "label": "Subscription Status",
    "options": "\nActive\nHalted"
+  },
+  {
+   "fieldname": "member_pin",
+   "fieldtype": "Data",
+   "label": "Member Security Pin"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "director_sb",
+   "fieldtype": "Section Break",
+   "label": "Representative Details"
+  },
+  {
+   "fieldname": "column_break_btsk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "county",
+   "fieldtype": "Select",
+   "label": "County",
+   "options": "\nBaringo\nBomet\nBungoma\nBusia\nElgeyo-Marakwet\nEmbu\nGarissa\nHoma Bay\nIsiolo\nKajiado\nKakamega\nKericho\nKiambu\nKilifi\nKirinyaga\nKisii\nKisumu\nKitui\nKwale\nLaikipia\nLamu\nMachakos\nMakueni\nMandera\nMarsabit\nMeru\nMigori\nMombasa\nMurang'a\nNairobi\nNakuru\nNandi\nNarok\nNyamira\nNyandarua\nNyeri\nSamburu\nSiaya\nTaita\u2013Taveta\nTana River\nTharaka-Nithi\nTrans-Nzoia\nTurkana\nUasin Gishu\nVihiga\nWajir\nWest Pokot",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rep_name",
+   "fieldtype": "Data",
+   "label": "Members Representative Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation or Position"
+  },
+  {
+   "description": "10 digit phone number like 07######## or 01########",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Representative's Phone",
+   "length": 10,
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "select_facility",
+   "fieldtype": "Select",
+   "label": "Select Facility",
+   "options": "\nAfya Bora Nursing Home\nAhadi Health And Maternity Services\nAhava Medical Centre\nAkemo Medical Clinic And Pharmacy\nAkshar Healthcare Ltd\nAlexandria General Hospital\nAlfombiu Medical Clinic\nAlice Nursing Home\nAlpha Hill Medical Centre Ltd\nAlphond Medical Centre\nAmbercare Medical Centre\nAndicare Dental Services Ltd\nAnsari Medical Clinic\nAppex Hospitals Malaba\nAroha Cancer Centre\nAthi River Medical Services\nAtimiros Hospital\nBamba Maternity Nursing Home\nBangal Nursing Home\nBaraka Smiles Dental Ltd\nBatian Medical Centre\nBenmac Hospital\nBlessed Comm. Medical Center\nBliss Medical Clinic Mumias\nBlue Turtle Nursing Home\nBrantly Medical Centre\nBreetons Medical Centre\nBrook Of Cherith Medical And Nutrition Centre\nBunyore Medical Centre\nBura Springs Family Medical Centre Limited\nBura Tana Nursing Home Limited\nBuruburu Health Centre\nBuxton Hospital\nBwana Ni Mwema Medical Centre\nCana Family Nursing Home\nCedar Medical Centre\nCentre View Medical Healthcare\nCentres For Community Healthcare Accesd\nChaani Medical Clinic\nChamalo Medical Centre\nCharity Medical Hospital\nChebunyo Medical Clinic\nCherengany Hospital\nCity Eye Hospital\nClastan Medical Services\nCounty Medical And Diagnostic Limited\nCounty Medical Centre\nCovenant Medical Centre\nCriterion Hospital\nDanid Care Services\nDaraja Medical Centre\nDencare Medical Clinic\nDeteni Maternity & Nursing Home\nDinome Medical Centre\nDomiline Medical Centre\nDrive Inn Nursing Home\nDunga Nursing Home\nEastlife Hospital\nElburgon Maternity Home\nEldama Ravine Nursing Home\nEldo Eye Center\nEliss Medical Centre\nEmmaus Medical Centre\nEsther Memorial Maternity & N.H.\nEvans Health Care\nFairmont Hospital\nFairview Medical Centre\nFaraja Family Care Hospital\nFavour Medical Services\nFavoured Medical Clinic\nFig Tree Health Options\nFina Nursing Home\nFirst Community Hospital\nFuraha Medical Care\nGacal Budget Hospital\nGakira Family Healthcare Ltd\nGetembe Annex Frankston Hospital Ltd\nGlory Medical Reproductive Health & Youth Friendly Centre\nGolgotha Medical Centre Limited\nGrace Home Clinic\nGraceheal Hospital\nGracepark Medical Centre\nGracimed Healthcare\nGranton & Dolly N.H.\nGreenspan Medical Centre\nGreenwood Cottage Community Hospital\nGuardian Hospital\nGynocare Womens And Fistula Hospital\nHalisi Family Hospital\nHaven Hospital\nHavilah Healthcare\nHawi Family Hospital-Oyugis\nHealth Charge Medical Centre-Kutus\nHolani Medical Centre\nHolsoms Annex Keumbu\nHolsoms Nursing Home\nHomeground Medical Centre\nHopkins Crescent Hospital Limited\nHoplan Medical Centre\nHuduma Nursing Home\nHunter Medical Centre Runyenjes\nHuruma Nursing Home\nIkutha Faith N.H.\nImara Mediplus Hospital\nImpact Healthcare\nInnovation Eye Centre Ltd - (Kisii Eye Hospital)\nItarc Hospital\nIvory Health Solutions Ltd\nJahmii Kipawa Medicl\nJakaba Medical Clinic\nJambo Healthcare Ltd\nJamii Hospital- Karatina\nJoyride Medical Centre\nJuja Modern Hospital\nJuja Road Hospital\nJumuia Hospital\nKabete Medical & Eye Care Centre\nKagio Hospital Ltd\nKannex Medical Ckinic\nKapsabet Supreme Surgical And Outpatient\nKasarani Maternity & Nursing Home\nKeflo Medical Clinic\nKenlands Health Services\nKenol Hospital Ltd\nKerio Hospital Limited\nKerugoya Fortis Medical Centre\nKerugoya Medical Centre\nKhalaba Medical Services Ltd\nKianjokoma Muungano Community Cottage Hospital\nKijanaheri Medical Centre\nKimathi Medical Services-Main Hospital\nKing David Hospital\nKingscare Medical\nKinondo Kwetu Health Services\nKirinyaga Treatment Centre\nKiritiri Medical Healthcare\nKisumu Comprehensive Medical Centre\nKisumu Heart Centre\nKitengela Medical Services\nKory Family Hospital\nKpn Pearl Health Limited\nKwa Lydia Medical Centre\nKwa Ng'ang'a Medicare Centre\nLadorphama Medical Centre Ltd\nLakeside Intergrated Medical Service\nLakeview Maternity & Nursing Home\nLane Care Medical Centre -Mlolongo\nLang'ata Hospital\nLenmek Hospital\nLessos Heathcare Clinic\nLiberty Maternity & Nursing Home\nLifepoint Hospital\nLifetime Wellness Centre\nLimuru Nursing Home Ltd\nLimuru Cottage Hospital\nMaai Mahiu Maternity & Hospital\nMabera Maternity & N.H.\nMaida Healthcare Limited\nMainland Health Centre\nMakdavie Medical Clinic\nMalvick Medical Centre\nMamlaka Medical Centre\nManguo Medical Centre\nMao-Aweys International Hospital\nMarble Healthcare Limited\nMargaret Wambui\nMariakani Community Health Centre\nMariakani Cottage Hospital\nMark Tumaini Medical Centre -Kirura\nMasii Medical Centre\nMathingira Medical Centre\nMatunda Maternity Home\nMatungulu Medical Centre\nMaua Medical Cottage Hospital Limited\nMawepi Medical Services\nMaxicare Sunrise Limited Hospital\nMedicure Medical Centre\nMedistar Hospital Kericho Ltd\nMeditrust Healthcare Services\nMedlife Healthcare Ltd\nMedstops Healthcare Nursing Home\nMephi Health Services\nMeru Doctors Plaza Hospital\nMikindani Medical Center\nMillenium Medical Centre\nMina Nursing Home Rhamu Ltd\nMiritini Medical Centre\nMitunguu Medical Services\nModesty Health Services\nMombasa Cancer Centre\nMombasa West Hospital\nMontagna Medical Clinic\nMontana Hospital\nMother And Child Hospital\nMt Kenya Kangema Hospital Ltd\nMtwapa Medical Clinic And Nursing Home\nMulatya Memorial Hospital (Mikindu)\nMulemi Nursing Home\nMumbuni Maternity And Nursing Home\nMumbuni Roadside Medical Centre\nMumoni Nursing Home\nMundika Maternity & N.H.\nMungoma Hospital\nMutethia Kiraone Nursing Home\nMwatate Medical Centre\nMwea Medical Centre\nMwingi Medicare Centre Ltd\nMwingi Specialist Hospital\nMwirigi Healthcare Services\nNairobi Homes Nursing Home\nNaivasha Quality Healthcare\nNaj Hospital Ltd\nNakuru Maternity & N. H.\nNala Maternity Hospital\nNamunyak Medical Centre\nNamuya Shalom Medical Services\nNanyuki Hospital Limited\nNarok Cottage Hospital\nNasha Lengot Medical Centre\nNeema Hospital\nNeon Rapha Healthcare Clinin\nNew Busia Maternity & Nursing Home\nNew Degree Medical Center\nNew Elgon View Medical Cottage\nNew Hope Hospital\nNew Ikonge Medical Centre\nNew Kilifi Wananchi Maternity & Nursing Home\nNewlight Medical Centre & N.H.\nNgurubani Medical Services\nNightingale Medical Centre\nNkubu Highway Medicare\nNuru Ambusely Medical Centre\nNyamira Jamii Med & Diagn.Centre\nNyamusi Medical Centre\nNyatieko Gesusu Health Services\nNzoia Medical Centre\nOaktree Centre For Kidney\nOkitta Nursing Home\nOlchobosei Medical Centre\nOlivelink Healthcare Ltd\nOljabet Hospital\nOlympus Medical Centre\nOptex Opticals\nPalm Care Sinai Hospital\nParkerra Medical Centre\nPatanisho Nursing Home\nPenda Health (Umoja Med Centre)\nPhadam Hospital\nPlainsview Hospitals And Nursing Home\nPolani Medical Centre\nPolyclinic Hospital\nPonacare Medical Centre\nPotter's Family Hospital\nPrecious Hospital\nPrecious Life Medical Centre\nPremiercare Diagnostic Centre Loitokitok\nPremiercare Diagnostics\nPremiercare Diagnostics (Narok)\nProact Services Health Center\nProgress Medical Centre\nPrudent Cottage Hospital\nQasims Hospital Ltd\nQatar Medical Clinic\nQueens & Kings Health Centre\nRadiant Hospitals (Kiambu)\nRakedenn Medical Centre\nRavine Glory Healthcare\nRavine Specialists Hospital Limited\nRehoboth Maternity And Nursing Home\nRiochand Nursing Home\nRobins Heath Care Ltd\nRoman Annex Med Centre\nRopheka Medical Services\nRopment Medical Centre\nRoyal Dental Clinic\nRoyal Garden Hospital\nRoyal Star Family Hospital\nSalama Cancer Centre\nSamjomen Hospital\nSanitas Family Hospital\nSantamore Specialized Surgical Hospital\nScanlab Kitengela\nScharts Medical Centre\nSerena Umoja Medical Centre\nShammah Nursing Home\nShelly Beach Hospital\nShibale Medical Centre\nSigma Medical Centre\nSikhendu Medical Center\nSilvad Calvary Hill Specialist Hospital\nSilvercrest Medcare\nSoin Medical Center Limited\nSouth Lake Med Centre\nSpringcrest Medical Center Ltd\nSprings Heritage Nursing Home-Juja\nSt Andrew's Medical Clinic\nSt Anne Medical Centre\nSt Clare Medical Centre\nSt James Amenity Hospital\nSt John Divine Nursing Home\nSt Joseph's Hospital\nSt Jude Nursing Home\nSt Luke's Afya Clinic\nSt Mary Health Services\nSt Mary's Mother & Child Hospital\nSt Paul Dawa Medical Centre\nSt. Crispin Afya Hospital\nST.Akidiva Memorial Hospital\nStarheal Medical Clinic\nStirling Medical Centre\nSubukia Integrated Med. Centre\nSummit Medicare Nyansiongo\nSynergy Clinics Limited\nTamani Medical Centre\nThagana County Medical Centre\nThe Athi River Shalom Hospital.\nThe Fairhaven Medicare\nThe Green Park Healthcare\nThe Greenview Nursing Home\nThe Hopkins Crescent Hospitals Limited\nThe Kitui Hospital Maternity And Nursing Home\nThe Kitui Royal Diognastics Centre\nThe Tana Hospital\nThuti Medical Clinic\nTimeless Medical Spa\nTop Care Limited\nTrue Life Medical Centre\nTrust Doctors Centre\nTsunza Medical Care Limited\nTudor Healthcare\nTulah Medical Centre\nTuwan Highway\nUltramed Healthcare Ltd\nUnited Health Group Medical Centre\nUpendo Medical Clinic\nUwezo Healthcare Ltd\nUzima Uhai Health Centre\nVantage Hospital Syokimau\nVelma Memorial Medical Centre\nVenoma Medical Centre\nVichabem Nursing Home\nVision Medical Center\nVisiongate Eye Care Consultants\nVostrum Medical Services\nWatamu Community Healthcare\nWatamu Hospital\nWatamu Maternity & Nursing Home\nWayside Medical Clinic\nWells Women Hospital\nWest Inland Hospital Ltd Changamwe\nWest Side Cottage Hospital\nWestlands Medical Centre\nWhite Health Medical Centre\nWhiterose Medical Centre\nYunasi Medical Centre\nZawena Treatment Centre"
+  },
+  {
+   "default": "0",
+   "fieldname": "enter_facility_name",
+   "fieldtype": "Check",
+   "label": "Enter Facility Name"
+  },
+  {
+   "fieldname": "column_break_siil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_code_data",
+   "fieldtype": "HTML",
+   "label": "QR Code Data"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "member_approval_status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Member Approval Status",
+   "options": "\nPending\nApproved"
+  },
+  {
+   "fieldname": "membership_status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Membership Status",
+   "options": "\nCurrent\nDue\nOverdue"
+  },
+  {
+   "default": "https://rupha.ruphasoft.com/5th-convention",
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Url"
+  },
+  {
+   "fieldname": "initial_membership",
+   "fieldtype": "Date",
+   "label": "Member Since",
+   "reqd": 1
+  },
+  {
+   "fieldname": "theatre",
+   "fieldtype": "Select",
+   "label": "Theatre",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "nhif_contract",
+   "fieldtype": "Select",
+   "label": "NHIF Contract",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "nhif_contract_type",
+   "fieldtype": "Select",
+   "label": "NHIF Contract Type",
+   "options": "\nComprehensive\nNon-Comprehensive"
+  },
+  {
+   "fieldname": "nhif_scope",
+   "fieldtype": "Select",
+   "label": "NHIF Scope",
+   "options": "\nINPATIENT/OUTPATIENT\nOUTPATIENT\nINPATIENT"
+  },
+  {
+   "fieldname": "makl_contract",
+   "fieldtype": "Select",
+   "label": "MAKL Contract",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "makl_scope",
+   "fieldtype": "Select",
+   "label": "MAKL Scope",
+   "options": "\nINPATIENT/OUTPATIENT\nOUTPATIENT\nINPATIENT"
+  },
+  {
+   "fieldname": "kmpdc_registration",
+   "fieldtype": "Attach",
+   "ignore_user_permissions": 1,
+   "label": "KMPDC Registration"
+  },
+  {
+   "fieldname": "kmpdc_current_license",
+   "fieldtype": "Attach",
+   "ignore_user_permissions": 1,
+   "label": "KMPDC Current License"
+  },
+  {
+   "fieldname": "directors_id",
+   "fieldtype": "Attach",
+   "ignore_user_permissions": 1,
+   "label": "Directors ID"
+  },
+  {
+   "fieldname": "kra_pin",
+   "fieldtype": "Attach",
+   "ignore_user_permissions": 1,
+   "label": "KRA PIN"
+  },
+  {
+   "fieldname": "keph_level",
+   "fieldtype": "Select",
+   "label": "KEPH Level",
+   "options": "\n1\n2\n3A\n3B\n4\n5\n6"
+  },
+  {
+   "fieldname": "bed_capacity",
+   "fieldtype": "Int",
+   "label": "Bed Capacity"
+  },
+  {
+   "fieldname": "nhif_hospital_code",
+   "fieldtype": "Int",
+   "label": "NHIF Hospital Code",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "mfl_code",
+   "fieldtype": "Int",
+   "label": "MFL CODE",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "services_offered",
+   "fieldtype": "Small Text",
+   "label": "Services Offered"
+  },
+  {
+   "fieldname": "pan_details",
+   "fieldtype": "Data",
+   "label": "PAN Details",
+   "translatable": 1
+  },
+  {
+   "fieldname": "exhibition_stand_optin",
+   "fieldtype": "Select",
+   "label": "Exhibition Stand Optin",
+   "options": "\nExhibition stand 2 days\nNot interested"
+  },
+  {
+   "fieldname": "costs",
+   "fieldtype": "HTML",
+   "label": "Costs",
+   "options": "<b>COSTS:</b>\n<ul>\n \t<li><b>Exhibition stand 2 days:</b> Ksh 20,000</li>\n</ul>"
+  },
+  {
+   "description": "Members can bring their co-directors/representatives. This has to be shared and approved in advanced for planning purposes.",
+   "fieldname": "number_of_complementary_passes",
+   "fieldtype": "Int",
+   "label": "Number of Complementary Passes",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "representative_email_id",
+   "fieldtype": "Data",
+   "label": "Representative's Email Address",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Facility Email Address",
+   "reqd": 1
   }
  ],
  "image_field": "image",
  "links": [],
- "modified": "2021-07-11 14:27:26.368039",
+ "modified": "2024-06-30 10:39:37.346543",
  "modified_by": "Administrator",
  "module": "Non Profit",
  "name": "Member",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -199,12 +455,21 @@
    "role": "Non Profit Member",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Guest",
+   "write": 1
   }
  ],
  "quick_entry": 1,
  "restrict_to_domain": "Non Profit",
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "title_field": "member_name",
  "track_changes": 1
 }
